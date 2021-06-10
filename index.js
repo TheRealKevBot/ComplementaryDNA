@@ -8,9 +8,18 @@
 
 
 function DNAStrand(dna){
-    //your code here
+    compStrand = []
+    curStrand = dna.toLowerCase().split('')
+    curStrand.forEach(sym => {
+        sym === 'a' ? compStrand.push('t') : null
+        sym === 't' ? compStrand.push('a') : null
+        sym === 'c' ? compStrand.push('g') : null
+        sym === 'g' ? compStrand.push('c') : null
+    })
+    return compStrand.join('').toUpperCase()
 } 
 
-console.log(DNAStrand("AAAA"),"TTTT","String AAAA is");
-console.log(DNAStrand("ATTGC"),"TAACG","String ATTGC is");
-console.log(DNAStrand("GTAT"),"CATA","String GTAT is");
+console.log("TTTT, " + "String AAAA is " + DNAStrand("AAAA"));
+console.log("TAACG, " + "String ATTGC is " + DNAStrand("ATTGC"));
+console.log("CATA, " + "String GTAT is " + DNAStrand("GTAT"));
+console.log("TAACG, " + "String ATTGC is " + DNAStrand("ATTGC"));
